@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class VolunteerAssigner {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Mara Group Donation Volunteer Assigner");
+        System.out.print("Enter the type of donation (e.g., clothing, furniture, etc.): ");
+        String donationType = scanner.nextLine().toLowerCase();
+        String assignedVolunteer;
+
+        if (donationType.equals("clothing")) {
+            assignedVolunteer = "Sovi";
+        } else {
+            System.out.print("Enter the name of the volunteer for other donations: ");
+            assignedVolunteer = scanner.nextLine();
+        }
+
+        System.out.println("The assigned volunteer
