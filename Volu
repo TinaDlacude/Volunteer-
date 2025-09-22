@@ -1,0 +1,22 @@
+class VolunteerAssigner:
+    def __init__(self):
+        self.volunteers = {
+            "clothing": "Sovi",
+            "other": "Other Volunteer"  # Replace with the actual volunteer's name
+        }
+
+    def assign_volunteer(self, donation_type):
+        if donation_type.lower() == "clothing":
+            return self.volunteers["clothing"]
+        else:
+            return self.volunteers["other"]
+
+def main():
+    assigner = VolunteerAssigner()
+    print("Mara Group Donation Volunteer Assigner")
+    donation_type = input("Enter the type of donation (e.g., clothing, furniture, etc.): ")
+    assigned_volunteer = assigner.assign_volunteer(donation_type)
+    print(f"The assigned volunteer is: {assigned_volunteer}")
+
+if __name__ == "__main__":
+    main()
