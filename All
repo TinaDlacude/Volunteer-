@@ -1,0 +1,32 @@
+% Define the function
+f = @(x) log(1 + x);
+
+% Define the point and step size
+x = 0.5;
+h = 0.1;
+
+% Calculate the exact derivatives
+f_exact_prime = @(x) 1 / (1 + x);
+f_exact_double_prime = @(x) -1 / (1 + x)^2;
+
+% Backward Finite Difference Method
+f_backward_prime = (f(x) - f(x - h)) / h;
+f_backward_double_prime = (f(x) - 2 * f(x - h) + f(x - 2 * h)) / h^2;
+
+% Forward Finite Difference Method
+f_forward_prime = (f(x + h) - f(x)) / h;
+f_forward_double_prime = (f(x + 2 * h) - 2 * f(x + h) + f(x)) / h^2;
+
+% Central Finite Difference Method
+f_central_prime = (f(x + h) - f(x - h)) / (2 * h);
+f_central_double_prime = (f(x + h) - 2 * f(x) + f(x - h)) / h^2;
+
+% Display the results
+fprintf('Exact f''(0.5) = %.6f\n', f_exact_prime(x));
+fprintf('Backward Finite Difference f''(0.5) = %.6f\n', f_backward_prime);
+fprintf('Forward Finite Difference f''(0.5) = %.6f\n', f_forward_prime);
+fprintf('Central Finite Difference f''(0.5) = %.6f\n', f_central_prime);
+
+fprintf('Exact f                                                                                       '(0.5) = %.6f\n', f_backward_double_prime);
+fprintf('Forward Finite Difference f''''(0.5) = %.6f\n', f_forward_double_prime);
+fprintf('Central Finite Difference f''''(0.5) = %.6f\n', f_central_double_prime);
