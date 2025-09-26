@@ -1,0 +1,16 @@
+% Define the function and its derivative
+2 f = @(x) x ^3 - x - 2; % Example : f(x) = x^3 - x - 2
+3 df = @(x ) 3* x ^2 - 1; % Derivative : f ’(x) = 3x^2 - 1
+4
+5 % Initial guess
+6 x0 = 1.5;
+7
+8 % Tolerance and maximum iterations
+9 tol = 1e -6;
+10 max_iter = 100;
+11
+12 % Call the Newton - Raphson method
+13 root = newton_raphson (f , df , x0 , tol , max_iter );
+14
+15 % Display the root
+16 fprintf (’The root is approximately : %f\n’, root );
